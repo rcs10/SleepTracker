@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SleepTracker</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="clear">Clear</string>
+    <string name="how_was_your_sleep">How was your sleep?</string>
+    <string name="zero_image">Zero Image</string>
+    <string name="one_image">One Image</string>
+    <string name="two_image">Two Image</string>
+    <string name="three_image">Three Image</string>
+    <string name="four_image">Four Image</string>
+    <string name="five_image">Five Image</string>
+    <string name="clear_msg">The entries in the database are gone forever!! Poof!!</string>
+
+    <string name="title"><![CDATA[<h3>HERE IS YOUR SLEEP DATA</h3>]]></string>
+    <string name="start_time"><![CDATA[<b>Start:</b>]]></string>
+    <string name="end_time"><![CDATA[<b>End:</b>]]></string>
+    <string name="quality"><![CDATA[<b>Quality:</b>]]></string>
+    <string name="hours_slept"><![CDATA[<b>Hours:Minutes:Seconds</b>]]></string>
+
+    <string name="zero_very_bad">Very bad</string>
+    <string name="one_poor">Poor</string>
+    <string name="two_soso">So-so</string>
+    <string name="three_ok">OK</string>
+    <string name="four_pretty_good">Pretty good</string>
+    <string name="five_excellent">Excellent!</string>
+</resources>
