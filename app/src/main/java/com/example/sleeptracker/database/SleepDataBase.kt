@@ -8,7 +8,6 @@ abstract class SleepDataBase : RoomDatabase() {
     abstract val sleepDataBaseDao : SleepDataBaseDao
 
     companion object{
-
         @Volatile
         private var INSTANCE : SleepDataBase? = null
 

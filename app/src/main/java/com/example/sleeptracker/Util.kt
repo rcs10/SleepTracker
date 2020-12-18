@@ -30,6 +30,19 @@ fun convertNumericQualityToString(quality: Int, resources: Resources): String {
 }
 
 
+fun convertNumericQualityToImages(quality: Long): Int {
+    return when (quality) {
+        0L -> R.drawable.ic_sleep_0
+        1L -> R.drawable.ic_sleep_1
+        2L -> R.drawable.ic_sleep_2
+        4L -> R.drawable.ic_sleep_4
+        5L -> R.drawable.ic_sleep_5
+        3L -> R.drawable.ic_sleep_3
+        else -> R.drawable.ic_sleep_waiting
+    }
+}
+
+
 /**
  * Take the Long milliseconds returned by the system and stored in Room,
  * and convert it to a nicely formatted string for display.

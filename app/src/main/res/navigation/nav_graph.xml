@@ -13,6 +13,9 @@
             android:id="@+id/action_sleepTracker_to_sleepQuality2"
             app:destination="@id/sleepQuality"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_sleepTracker_to_singleNightDetails"
+            app:destination="@id/singleNightDetails" />
     </fragment>
     <fragment
         android:id="@+id/sleepQuality"
@@ -26,6 +29,19 @@
             app:popUpToInclusive="true" />
         <argument
             android:name="nightKey"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleNightDetails"
+        android:name="com.example.sleeptracker.sleepnightdetails.SingleNightDetails"
+        android:label="fragment_single_night_details"
+        tools:layout="@layout/fragment_single_night_details" >
+        <action
+            android:id="@+id/action_singleNightDetails_to_sleepTracker"
+            app:destination="@id/sleepTracker"
+            app:popUpTo="@id/sleepTracker"
+            app:popUpToInclusive="true" />
+        <argument android:name="nightId"
             app:argType="long" />
     </fragment>
 </navigation>

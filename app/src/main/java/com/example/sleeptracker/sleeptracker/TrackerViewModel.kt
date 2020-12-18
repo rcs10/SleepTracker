@@ -10,13 +10,13 @@ import com.example.sleeptracker.database.SleepDataBaseDao
 import com.example.sleeptracker.formatNights
 import kotlinx.coroutines.*
 
-class TrackerViewModel(application: Application, val sleepDataBaseDao: SleepDataBaseDao) :
+class TrackerViewModel(application: Application, private val sleepDataBaseDao: SleepDataBaseDao) :
     AndroidViewModel(application) {
 
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(viewModelJob + Dispatchers.Main)
     private val tonight = MutableLiveData<OneNight?>()
-    private var allNights = sleepDataBaseDao.getAllNight()
+    var allNights = sleepDataBaseDao.getAllNight()
     var allNightsString = Transformations.map(allNights) {
         formatNights(it, application.resources)
     }
@@ -27,6 +27,10 @@ class TrackerViewModel(application: Application, val sleepDataBaseDao: SleepData
     private val _showSnackBar = MutableLiveData<Boolean>()
     val showSnackbar: LiveData<Boolean>
         get() = _showSnackBar
+
+    private val _navigateToDisplayScreen = MutableLiveData<Long>()
+    val navigateToDisplayScreen : LiveData<Long>
+        get() = _navigateToDisplayScreen
 
     fun resetSnackBarStatus(){
         _showSnackBar.value = false
@@ -127,5 +131,13 @@ class TrackerViewModel(application: Application, val sleepDataBaseDao: SleepData
 
     fun resetNavigation() {
         _navigateToQuality.value = null
+    }
+
+    fun goToDisplayScreen(nightId: Long) {
+        _navigateToDisplayScreen.value = nightId
+    }
+
+    fun resetNavigationToDisplayScreen(){
+        _navigateToDisplayScreen.value = null
     }
 }

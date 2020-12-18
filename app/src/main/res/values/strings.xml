@@ -25,4 +25,7 @@
     <string name="three_ok">OK</string>
     <string name="four_pretty_good">Pretty good</string>
     <string name="five_excellent">Excellent!</string>
+    <string name="image_desc">Rating Image</string>
+    <string name="back">Back</string>
+    <string name="header_text">Sleep Results</string>
 </resources>
