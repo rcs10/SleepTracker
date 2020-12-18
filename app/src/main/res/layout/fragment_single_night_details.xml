@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="singleNightViewModel"
+            type="com.example.sleeptracker.sleepnightdetails.SingleNightViewModel" />
+        <variable
+            name="oneNight"
+            type="com.example.sleeptracker.database.OneNight" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".sleepnightdetails.SingleNightDetails">
+
+        <ImageView
+            android:id="@+id/single_ratings_image"
+            android:layout_width="@dimen/image_dimen"
+            android:layout_height="@dimen/image_dimen"
+            android:layout_marginBottom="100dp"
+            android:contentDescription="@string/image_desc"
+            app:layout_constraintBottom_toTopOf="@+id/single_start_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:qualityImage="@{oneNight}"
+            tools:src="@drawable/ic_sleep_5" />
+
+        <TextView
+            android:id="@+id/single_start_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/single_end_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/single_ratings_image"
+            tools:text="@string/start_time"
+            app:startTime="@{oneNight}"/>
+
+        <TextView
+            android:id="@+id/single_end_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/single_quality_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/single_start_text"
+            tools:text="@string/end_time"
+            app:endTime="@{oneNight}"/>
+
+        <TextView
+            android:id="@+id/single_quality_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/back_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/single_end_text"
+            tools:text="@string/quality"
+            app:qualityText="@{oneNight}"/>
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{() -> singleNightViewModel.onBackPressed()}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
